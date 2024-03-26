@@ -13,7 +13,7 @@ Open Browser Headless
     Call Method     ${options}    add_argument     --disable-gpu
     Call Method     ${options}    add_argument     --no-sandbox
     Call Method     ${options}    add_argument     --disable-dev-shm-usage
-    Create Webdriver     Chrome    chrome_options=${options}
+    Create Webdriver     Chrome    options=${options}
     Set Window Size   1600  900
     Go To    ${url}
 Open Chrome Browser

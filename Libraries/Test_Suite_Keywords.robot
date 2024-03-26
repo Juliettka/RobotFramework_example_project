@@ -65,7 +65,7 @@ Get inventory items list
            ${list}=    Get Text    ${locator}
            Append To List    ${lists}    ${list}
     END
-    [Return]  ${lists}
+    RETURN  ${lists}
 Remove $ from the items
     @{original_list}=  Get Inventory Items List  ${inventory_price}
     ${list}=  Create List
@@ -74,19 +74,19 @@ Remove $ from the items
         ${str}=  Convert To Number  ${str}
         Append To List  ${list}  ${str}
     END
-    [Return]  ${list}
+    RETURN  ${list}
 Sort the list of items
     [Arguments]  ${list}
     Sort list  ${list}
-    [Return]  ${list}
+    RETURN  ${list}
 Reverse the list of items
     [Arguments]  ${list}
     Sort List  ${list}
     Reverse list  ${list}
-    [Return]  ${list}
+    RETURN  ${list}
 Check selected sorting
     ${option}=  Get Selected List Value   ${filter_dropdown}
-    [Return]  ${option}
+    RETURN  ${option}
 Select sorting from the dropdown
     [Arguments]   ${sorting}
     Select From List By Value  ${filter_dropdown}    ${sorting}
